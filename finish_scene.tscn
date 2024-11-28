@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1sa4ysq2iujm"]
+
+[ext_resource type="Script" path="res://finish_scene.gd" id="1_qpyq3"]
+[ext_resource type="Texture2D" uid="uid://bbk63g4n4ad06" path="res://sprites/lever1.png" id="2_kcf56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16ljx"]
+size = Vector2(16, 16)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_qpyq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_16ljx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_kcf56")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

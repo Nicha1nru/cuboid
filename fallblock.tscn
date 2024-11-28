@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c11vqb6lplw75"]
+
+[ext_resource type="Texture2D" uid="uid://c5yjxtaf33g1k" path="res://sprites/fallblock.png" id="1_l5tgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y28b5"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="." groups=["fall"]]
+collision_layer = 65535
+collision_mask = 65535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["fall"]]
+texture_filter = 1
+rotation = -3.13693
+shape = SubResource("RectangleShape2D_y28b5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_l5tgv")

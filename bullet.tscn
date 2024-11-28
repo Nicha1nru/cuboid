@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuvkbkxu5acmg"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_0f251"]
+[ext_resource type="Texture2D" uid="uid://f1bgxu2swe3c" path="res://sprites/throwable.png" id="1_t4au0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrjo"]
+size = Vector2(16, 8)
+
+[node name="Area2D" type="Area2D" groups=["bullet", "kill"]]
+script = ExtResource("1_0f251")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_t4au0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ryrjo")
+
+[node name="Timer" type="Timer" parent="."]

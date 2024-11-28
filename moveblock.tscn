@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://3b54ntx6d24m"]
+
+[ext_resource type="Script" path="res://moveblock.gd" id="1_a4h8m"]
+[ext_resource type="Texture2D" uid="uid://c5yjxtaf33g1k" path="res://sprites/fallblock.png" id="1_myrba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfuka"]
+size = Vector2(17.7419, 18.5484)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_a4h8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_myrba")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+scale = Vector2(1.24, 1.34521)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(-4.80683e-08, -0.403225)
+shape = SubResource("RectangleShape2D_hfuka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.920002, 0.84)
+shape = SubResource("RectangleShape2D_hfuka")

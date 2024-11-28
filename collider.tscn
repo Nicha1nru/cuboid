@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://diwfu0ek67yy0"]
+
+[ext_resource type="Script" path="res://collider.gd" id="1_mexqb"]
+[ext_resource type="Texture2D" uid="uid://diaq5ew8mgfni" path="res://sprites/remove_wall.png" id="2_gxv81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0u7q"]
+size = Vector2(16, 16)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_mexqb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_n0u7q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_gxv81")

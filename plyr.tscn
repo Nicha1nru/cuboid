@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt5g4ehtjuwcm"]
+
+[ext_resource type="Script" path="res://plyr.gd" id="1_lpue3"]
+[ext_resource type="Texture2D" uid="uid://mrd7bit0fajn" path="res://sprites/player.png" id="1_nmoen"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndjkn"]
+size = Vector2(16, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player", "plr"]]
+script = ExtResource("1_lpue3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nmoen")
+
+[node name="Area2D" type="Area2D" parent="." groups=["player", "plr"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ndjkn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ndjkn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
